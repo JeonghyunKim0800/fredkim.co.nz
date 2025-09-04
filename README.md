@@ -1,0 +1,1 @@
+# fredkim.co.nz
