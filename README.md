@@ -1,4 +1,4 @@
-![Uploading jfkprofile.jpg…]()
+
 
 This is my personal usage and introduction of my career, and businesses, yet.
 
