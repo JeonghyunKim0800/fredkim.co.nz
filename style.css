@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* 1. BASE & RESET */
+body { margin: 0; padding: 0; background-color: #000000; color: #ffffff; font-family: 'Inter', sans-serif; line-height: 1.6; }
+
+/* 2. HEADER & NAVIGATION */
+header { display: flex; justify-content: space-between; align-items: center; padding: 2rem 4rem; }
+.logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #ffffff; text-decoration: none; }
+nav { display: flex; gap: 1.5rem; align-items: center; }
+nav a { color: #ffffff; text-decoration: none; font-size: 0.9rem; position: relative; }
+nav a.active::after { content: ''; display: block; width: 100%; height: 1px; background: #ffffff; margin-top: 4px; }
+.social-icon { width: 18px; height: auto; vertical-align: middle; transition: opacity 0.2s ease-in-out; }
+nav a:hover .social-icon { opacity: 0.6; }
+
+/* 3. MAIN CONTAINER */
+main { max-width: 1000px; margin: 4rem auto; padding: 0 2rem; }
+.page-title { font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 400; margin: 0; flex: 1; }
+
+/* 4. INDEX PAGE */
+.profile-section { display: flex; align-items: center; justify-content: space-between; gap: 3rem; margin-bottom: 4rem; }
+.image-wrapper { flex: 1; display: flex; justify-content: center; }
+.image-wrapper img { width: 250px; height: auto; object-fit: cover; border-radius: 4px; }
+.profile-text { flex: 1; }
+.profile-text h2 { font-size: 1.2rem; font-weight: 400; margin-bottom: 1rem; }
+.profile-text p, .description-section p { font-size: 0.95rem; color: #cccccc; }
+.description-section { margin-bottom: 4rem; max-width: 900px; }
+
+/* 5. SKILLS PAGE (Grid) */
+.skills-section { margin-bottom: 4rem; }
+.section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 400; margin-bottom: 2rem; border-bottom: 1px solid #333; padding-bottom: 1rem; }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.skill-card-link { text-decoration: none; color: inherit; display: block; }
+.skill-card { background-color: #111111; padding: 2rem; border: 1px solid #333333; transition: transform 0.2s ease, border-color 0.2s ease; height: 100%; box-sizing: border-box; }
+.skill-card:hover { transform: translateY(-5px); border-color: #666666; }
+.skill-card h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-top: 0; margin-bottom: 1rem; }
+.skill-card p { font-size: 0.9rem; color: #cccccc; margin: 0; }
+
+/* 6. SKILLS DETAIL PAGES */
+.breadcrumb { margin-bottom: 2rem; }
+.breadcrumb a { color: #888888; text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease; }
+.breadcrumb a:hover { color: #ffffff; }
+.skill-detail-container { display: flex; gap: 4rem; align-items: center; }
+.skill-detail-content { flex: 1; order: 1; }
+.skill-detail-content h1 { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 400; margin-bottom: 1.5rem; color: #ffffff; }
+.lead-text { font-size: 1.1rem; color: #ffffff; margin-bottom: 2rem; line-height: 1.6; }
+.detail-list { padding-left: 1.2rem; color: #cccccc; font-size: 1.05rem; }
+.detail-list li { margin-bottom: 1.2rem; line-height: 1.6; }
+.skill-detail-image { flex: 1.5; order: 2; }
+.skill-detail-image img { width: 100%; height: auto; border-radius: 4px; border: 1px solid #333333; box-shadow: 0 8px 24px rgba(255, 255, 255, 0.04); }
+
+/* 7. MOBILE RESPONSIVE */
+@media screen and (max-width: 768px) {
+    header { flex-direction: column; gap: 1.2rem; padding: 1.5rem 1rem; text-align: center; }
+    nav { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+    main { padding: 0 1.2rem; margin: 2rem auto; }
+    .profile-section { flex-direction: column; text-align: center; gap: 2rem; }
+    .page-title, .skill-detail-content h1 { font-size: 2.2rem; }
+    .image-wrapper img { width: 180px; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .skill-detail-container { flex-direction: column; gap: 2.5rem; }
+    .skill-detail-image { order: -1; flex: auto; }
+    .skill-detail-content { order: 1; flex: auto; }
+}
+
+/* =========================================================
+   8. FOOTER (하단 연락처 영역)
+========================================================= */
+footer {
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+    background-color: #000000;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 좌측 및 우측 영역이 동일한 비율을 차지하도록 하여 중앙 아이콘이 정확히 가운데 오게 함 */
+.footer-left, .footer-right {
+    flex: 1;
+}
+
+.footer-left p, .footer-right p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.footer-left p {
+    text-align: left;
+}
+
+.footer-right p {
+    text-align: right;
+}
+
+.footer-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* 인스타그램과 페이스북 아이콘 사이 간격 */
+}
+
+/* =========================================================
+   9. 모바일 반응형 푸터 수정 (스마트폰 화면)
+========================================================= */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .footer-left p, .footer-right p {
+        text-align: center;
+    }
+    
+    .footer-center {
+        order: -1; /* 모바일에서는 SNS 아이콘이 전화번호/이메일보다 위에 오도록 배치 (시각적 안정감) */
+        margin-bottom: 1rem;
+    }
+}

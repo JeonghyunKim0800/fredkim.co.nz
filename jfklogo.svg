@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150" role="img" aria-label="JFK">
+  <title>JFK</title>
+  <rect width="300" height="150" fill="none"/>
+  <text x="150" y="106" text-anchor="middle"
+        fill="#fff" font-family="Georgia, 'Times New Roman', serif"
+        font-size="86" font-weight="400" letter-spacing="-5">JFK</text>
+</svg>
