@@ -1,0 +1,106 @@
+/* 1. 배경 설정 (전체화면) */
+.brand-landing-page {
+    overflow: hidden; /* 스크롤 방지 */
+}
+
+.brand-landing-page .hero-container {
+    max-width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('배경이미지.jpg'); /* 파일 이름 확인 필수 */
+    background-size: cover;
+    background-position: center;
+}
+
+/* 2. 뒤로가기 버튼 (이미지에서 요청하신 위치와 크기) */
+.back-button {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    z-index: 9999;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.back-button svg {
+    width: 35px;
+    height: 35px;
+}
+
+.back-button:hover {
+    transform: translateX(-5px);
+}
+
+/* 3. 중앙 브랜드 텍스트 */
+.brand-content {
+    text-align: center;
+    animation: fadeInContent 1.5s ease-in-out;
+}
+
+.brand-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    font-weight: 400;
+    letter-spacing: 5px;
+    margin: 0;
+    color: #ffffff !important;
+}
+
+.brand-line {
+    width: 50px;
+    height: 1px;
+    background: white;
+    margin: 20px auto;
+}
+
+.brand-subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #cccccc;
+}
+
+/* 링크 색상 보정 (파란색 방지) */
+.credit-link, .btn-learn-more {
+    color: #ffffff !important;
+    text-decoration: none;
+}
+
+.btn-learn-more {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 30px;
+    border: 1px solid white;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    transition: all 0.3s;
+}
+
+.btn-learn-more:hover {
+    background: white;
+    color: black !important;
+}
+
+/* 4. 전용 푸터 (하단 고정) */
+.brand-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: transparent !important;
+}
+
+@keyframes fadeInContent {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 모바일 대응 */
+@media screen and (max-width: 768px) {
+    .brand-title { font-size: 2.5rem; }
+    .back-button { top: 20px; left: 20px; }
+}
